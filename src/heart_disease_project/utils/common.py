@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from src.krishnaikproject import logger
+from heart_disease_project import logger
 import json
 import joblib
 from ensure import ensure_annotations
@@ -12,7 +12,7 @@ from typing import Any
 
 
 @ensure_annotations
-def read_yaml(path_to_yaml: Path) -> ConfigBox:
+def read_yaml(path_to_yaml: Path)->ConfigBox:
     """reads yaml file and returns
 
     Args:
