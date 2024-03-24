@@ -1,1 +1,8 @@
-key1: value1
+COLUMNS:
+  age: int64
+  sex: int64
+  BP: int64
+  cholesterol: int64
+
+TARGET_COLUMN:
+  name: heart disease
