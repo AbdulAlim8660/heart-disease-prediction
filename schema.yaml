@@ -1,8 +1,24 @@
 COLUMNS:
-  age: int64
-  sex: int64
-  BP: int64
-  cholesterol: int64
+  customerid: object
+  age: object 
+  salary: object
+  balance: object
+  marital: object
+  jobedu: object 
+  targeted: object
+  default: object
+  housing: object
+  loan: object
+  contact: object 
+  day: object
+  month: object 
+  duration: object 
+  campaign: object
+  pdays: object
+  previous: object 
+  poutcome: object 
+  response: object
+
 
 TARGET_COLUMN:
-  name: heart disease
+  name: response
