@@ -2,6 +2,7 @@ from heart_disease_project import logger
 from heart_disease_project.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from heart_disease_project.pipeline.stage_02_data_validation import DataValidationPipeline
 from heart_disease_project.pipeline.stage_03_data_tranformation import DataTransformationPipeline
+from heart_disease_project.pipeline.stage_04_model_trainer import ModelTrainerPipeline
 STAGE_NAME = 'Data Ingestion Stage'
 
 try:
@@ -31,5 +32,15 @@ try:
      data_transformation_pipeline = DataTransformationPipeline()
      data_transformation_pipeline.main()
      logger.info("the data transformation pipeline was successful")
+except Exception as e:
+     raise e
+
+STAGE_NAME='Model training Stage'
+
+try:
+     logger.info('running the model training stage')
+     model_trainer_pipeline = ModelTrainerPipeline()
+     model_trainer_pipeline.main()
+     logger.info('model training pipeline successfully completed')
 except Exception as e:
      raise e

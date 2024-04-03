@@ -34,6 +34,7 @@ class DataTransformation:
         self.df['default'] = self.df['default'].map({'yes': 1, 'no': 0})
         self.df['loan'] = self.df['loan'].map({'yes': 1, 'no': 0})
         self.df['housing'] = self.df['housing'].map({'yes': 1, 'no': 0})
+        self.df['response']=self.df['response'].map({'yes':1,'no':0})
         return self.df
 
     def convert_duration(self):
@@ -87,6 +88,10 @@ class DataTransformation:
         self.df.drop(list_of_numerical, axis=1, inplace=True)
         self.df = pd.concat([self.df, df_scaled], axis=1)
         return self.df
+    def drop_na(self):
+        print(self.df.isnull().sum())
+        self.df.dropna(inplace=True)
+        print(self.df.shape)
     
     def train_test_split(self):
         train, test = train_test_split(self.df, test_size=0.2, random_state=42)

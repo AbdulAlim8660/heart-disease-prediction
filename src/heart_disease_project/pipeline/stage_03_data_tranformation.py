@@ -27,6 +27,7 @@ class DataTransformationPipeline:
                 data_transformation.create_bins()
                 data_transformation.one_hot_encode()
                 data_transformation.scale_numerical()
+                data_transformation.drop_na()
                 data_transformation.train_test_split()
             else:
                 raise Exception('Your data schema is not valid')
